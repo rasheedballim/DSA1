@@ -7,6 +7,16 @@ public class Main {
         
         System.out.println(s.isEmpty());
         System.out.println(s.isFull());
+        s.push(5);
+        s.push(6);
+
+        System.out.println(s.pop());
+        System.out.println(s.peep());
+        s.delete();
+
+
+
+
 
     }
     
