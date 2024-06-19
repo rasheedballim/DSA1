@@ -1,0 +1,7 @@
+## Basics ##
+A non-linear data structure with hierarchial relationships between its elements
+
+## Terminology ##
+Root - top node without a parent
+
+
