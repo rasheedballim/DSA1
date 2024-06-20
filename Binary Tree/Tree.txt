@@ -3,5 +3,16 @@ A non-linear data structure with hierarchial relationships between its elements
 
 ## Terminology ##
 Root - top node without a parent
+Edge - the link between two nodes
+Leaf - A node that doesnt have any children
+Sibling - children with the same parent
+Ancestor - parent or any grand children of a node
+Height - Lenth of path from a node to deepest node
+Depth - depth of root node
 
+## Traversals ##
+Pre-order - Root-->Left subtree--> Right subtree
+In-Order - Left --> Root--> Right
+Post-Order - Left-->Right-->Root
+Level-Order - each level from left to right
 
