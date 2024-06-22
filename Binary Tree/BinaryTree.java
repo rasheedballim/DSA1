@@ -47,7 +47,11 @@ public class BinaryTree{
 
 
     }
-    void levelOrder(Node node){
+    void levelOrder(){
+        if(root==null){
+            System.out.println("The Tree is Empty!");
+            return;
+        }
         Queue<Node> queue = new LinkedList<Node>();
         queue.add(root);
         while(!queue.isEmpty()){
@@ -64,34 +68,67 @@ public class BinaryTree{
 
 
     }
+    void insert(String value){
+        Node newnNode = new Node(value);
+        if(root==null){
+            root=newnNode;
+            System.out.println("The Node has been added to root");
+            return;
+        }
+        Queue<Node> queue =new LinkedList<Node>();
+        queue.add(root);
+
+        while(!queue.isEmpty()){
+            Node presentNode = queue.remove();
+            if(presentNode.left==null){
+                presentNode.left = newnNode;
+                System.out.println("The Node has been added");
+                break;
+            }
+            else if(presentNode.right==null){
+                    presentNode.right = newnNode;
+                    System.out.println("The Node has been added");
+                    break;
+            }
+            queue.add(presentNode.left);
+            queue.add(presentNode.right);
+
+        }
+    }
+    void search(String value){
+        Queue<Node> queue =new LinkedList<Node>();
+        queue.add(root);
+        while(!queue.isEmpty()){
+            Node presentNode = queue.remove();
+            if(presentNode.data == value){
+                System.out.println("The value "+value+" has been found!");
+                return;
+            }
+            if(presentNode.left!=null){
+            queue.add(presentNode.left);
+            }
+            if(presentNode.right!=null){
+                queue.add(presentNode.right);
+                }
+            
+        }
+        System.out.println("The value "+value+" is not in the Tree!");
+
+        
+
+    }
 
     public static void main(String[] args){
         BinaryTree bt=new BinaryTree();
-        Node n1 =new Node("N1");
-        Node n2 =new Node("N2");
-        Node n3 =new Node("N3");
-        Node n4 =new Node("N4");
-        Node n5 =new Node("N5");
-        Node n6 =new Node("N6");
-        Node n7 =new Node("N7");
-        Node n8 =new Node("N8");
-        Node n9 =new Node("N9");
 
+        bt.levelOrder();
+        bt.insert("N1");
+        bt.insert("N2");
+        bt.insert("N3");
+        bt.insert("N4");
 
-
-
-        
-        n1.left =n2;
-        n1.right=n3;
-        n2.left=n4;
-        n2.right=n5;
-        n3.left =n6; 
-        n3.right=n7;
-        n4.left = n8;
-        n4.right=n9;
-        bt.root=n1;
-
-        bt.levelOrder(bt.root);
+        bt.preOrder(bt.root);
+        bt.search("N4");
 
 
 
