@@ -118,6 +118,17 @@ class LinkedList{
 //        }
 //        head=prev;
 //    }
+    void count(){
+        Node curr = this.head;
+        int n = 0;
+        while(curr!= null){
+            // curr points to the actual node as a whole. not its value or next.
+            n++;
+            curr = curr.next;
+        }
+        System.out.println(n);
+    }
+
 }
 public class SinglyLinkedList{
 
@@ -137,6 +148,7 @@ public class SinglyLinkedList{
 
         ll.reverse();
         ll.printLL();
+        ll.count();
 
     }
 }
