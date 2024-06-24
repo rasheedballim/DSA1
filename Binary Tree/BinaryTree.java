@@ -97,6 +97,13 @@ public class BinaryTree{
 
         }
     }
+
+    void delete(){
+        root = null;
+        System.out.println("The Tree has been deleted!");
+
+    }
+
     void search(String value){
         Queue<Node> queue =new LinkedList<Node>();
         queue.add(root);
@@ -131,6 +138,7 @@ public class BinaryTree{
 
         bt.preOrder(bt.root);
         bt.search("N4");
+        bt.delete();
 
 
 
